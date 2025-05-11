@@ -32,7 +32,7 @@
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${apiKey}`,
-          'HTTP-Referer': 'https://your-site.netlify.app/',
+          'HTTP-Referer': 'https://satya-khoj-ai.netlify.app/',
           'X-Title': 'Ramayan-Fact-Checker'
         },
         body: JSON.stringify({
