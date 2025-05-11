@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramayan AI Truth Seeker</title>
+  <meta name="description" content="AI-powered fact checker for Ramayan epic" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+  <div class="page-transition"></div>
+  
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h1>Satya<span>Khooj</span></h1>
+        </div>
+        <div class="nav-menu">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#fact-checker">Verify Facts</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </div>
+        <div class="menu-toggle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text animate-fade-in">
+            <h1>Discover the <span>Truth</span> Within the Ramayan</h1>
+            <p>Our AI-powered fact checker verifies claims against the authentic epic text</p>
+            <a href="#fact-checker" class="btn-primary">Verify Facts Now</a>
+          </div>
+          <div class="hero-image animate-slide-in">
+            <div class="image-container">
+              <div class="decorative-border"></div>
+              <img src="https://i.pinimg.com/736x/ce/e0/ff/cee0ffc4fc90d60c250246c7b5c7acf8.jpg" alt="Symbolic representation of Ramayan epic" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="decorative-pattern-bottom"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About <span>Satya Khooj</span></h2>
+          <div class="decorative-line"></div>
+        </div>
+        <div class="about-content">
+          <div class="about-text animate-on-scroll">
+            <p>Satya Khooj (Truth Seeker) is an AI-powered platform dedicated to preserving the authenticity of the Ramayan epic. Our advanced language model has been trained on authentic versions of the text to provide accurate verification of claims.</p>
+            <p>In an era of misinformation, we aim to be a reliable source for scholars, enthusiasts, and anyone seeking to understand the true essence of this ancient text. Our system can analyze claims against original sources and provide evidence-based evaluations.</p>
+          </div>
+          <div class="features-grid animate-on-scroll">
+            <div class="feature-card">
+              <div class="feature-icon">🔍</div>
+              <h3>Advanced Analysis</h3>
+              <p>Our AI model examines claims against various authentic translations and versions</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📚</div>
+              <h3>Scholarly Sources</h3>
+              <p>Based on respected scholarly translations and original Sanskrit texts</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">💬</div>
+              <h3>Contextual Understanding</h3>
+              <p>Recognizes cultural and historical context behind the stories</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚖️</div>
+              <h3>Balanced Perspective</h3>
+              <p>Presents diverse interpretations when texts have variations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fact Checker Section -->
+    <section id="fact-checker" class="fact-checker">
+      <div class="decorative-pattern-top"></div>
+      <div class="container">
+        <div class="section-heading">
+          <h2>Verify <span>Ramayan Facts</span></h2>
+          <div class="decorative-line"></div>
+        </div>
+        <div class="fact-checker-content">
+          <div class="checker-form animate-on-scroll">
+            <form id="fact-check-form">
+              <div class="form-group">
+                <label for="claim">Your claim about the Ramayan:</label>
+                <textarea id="claim" rows="4" placeholder="Enter a claim to verify (e.g., 'Hanuman set fire to Lanka with his tail')"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-primary" id="verify-btn">
+                  <span class="btn-text">Verify This Claim</span>
+                  <span class="btn-loader"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="results-container" id="results-container">
+            <!-- Results will be populated here -->
+          </div>
+        </div>
+      </div>
+      <div class="decorative-pattern-bottom"></div>
+    </section>
+
+    <div class="search-history animate-on-scroll">
+      <h3>Your Search History</h3>
+      <ul id="search-history-list"></ul>
+      <button id="clear-history-btn" style="display: none;"> Clear History</button>
+      <div id="no-history-message" style="display: none; text-align: center; margin-top: 10px;">
+        <p>No search history</p>
+      </div>
+    </div>
+   
+
+    <!-- References Section -->
+    <section id="references" class="references">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our <span>References</span></h2>
+          <div class="decorative-line"></div>
+        </div>
+        <div class="references-content animate-on-scroll">
+          <p>Our AI system has been trained on these authentic versions of the Ramayan:</p>
+          <ul class="references-list">
+            <li>
+              <h3>Valmiki Ramayan</h3>
+              <p>The original Sanskrit epic attributed to sage Valmiki, considered the earliest version</p>
+            </li>
+            <li>
+              <h3>Tulsidas' Ramcharitmanas</h3>
+              <p>The popular 16th-century retelling in Awadhi language by Goswami Tulsidas</p>
+            </li>
+            <li>
+              <h3>Kamban Ramayanam</h3>
+              <p>The Tamil version by poet Kamban from the 12th century</p>
+            </li>
+            <li>
+              <h3>Critical Editions</h3>
+              <p>Scholarly critical editions that analyze textual variations</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h2>Satya<span>Khooj</span></h2>
+          <p>Illuminating the truth within ancient texts</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#fact-checker">Verify Facts</a></li>
+            <li><a href="#references">References</a></li>
+          </ul>
+        </div>
+        <div class="footer-disclaimer">
+          <h3>Disclaimer</h3>
+          <p>This is an AI-assisted tool that provides information based on available texts. Results should be verified with scholarly sources.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Satya Khooj | Ramayan AI Truth Seeker</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
