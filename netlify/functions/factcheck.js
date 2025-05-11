@@ -4,12 +4,11 @@ exports.handler = async (req, res) => {
   }
 
   const { claim } = req.body;
-
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!claim) {
     return res.status(400).json({ error: 'Claim is required.' });
   }
 
-  const apiKey = process.env.OPENROUTER_API_KEY;
 
   const prompt = `
     You are a Ramayan fact-checking AI that evaluates claims about the ancient Indian epic. Given the claim below, analyze its accuracy based on authentic versions of the Ramayan (Valmiki Ramayan, Ramcharitmanas, etc.).
