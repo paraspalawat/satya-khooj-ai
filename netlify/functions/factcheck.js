@@ -51,16 +51,20 @@ exports.handler = async (req, res) => {
       })
     });
 
-    if (!response.ok) {
-      let errorMessage = 'OpenRouter API failed';
-      try {
-        const errorData = await response.json();
-        errorMessage = errorData.error?.message || errorMessage;
-      } catch (parseError) {
-        console.error('Failed to parse error JSON from OpenRouter:', parseError);
-      }
-      return res.status(500).json({ error: errorMessage });
-    }
+ if (!response.ok) {
+  let errorMessage = 'OpenRouter API failed';
+  const text = await response.text();  // try reading plain text body
+  console.error('Non-OK response from OpenRouter:', text);
+  try {
+    const errorData = JSON.parse(text);
+    errorMessage = errorData.error?.message || errorMessage;
+  } catch (parseError) {
+    console.error('Failed to parse error JSON from OpenRouter:', parseError);
+    errorMessage = `OpenRouter returned invalid response: ${text}`;
+  }
+  return res.status(500).json({ error: errorMessage });
+}
+
 
     const data = await response.json();
 
