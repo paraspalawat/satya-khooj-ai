@@ -86,20 +86,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   async function factCheckClaim(claim) {
-    const response = await fetch('/.netlify/functions/factCheck', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ claim })
-    });
+  const response = await fetch('/.netlify/functions/factCheck', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ claim })
+  });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to verify claim.');
-    }
+  let responseBody = null;
 
-    const result = await response.json();
-    return result;
+  // Try to parse the JSON safely
+  try {
+    responseBody = await response.json();
+  } catch (jsonError) {
+    // response body is empty or not JSON
+    throw new Error('Server returned an invalid response. Please try again later.');
   }
+
+  if (!response.ok) {
+    throw new Error(responseBody?.error || 'Failed to verify claim.');
+  }
+
+  return responseBody;
+}
+
 
   function displayResults(claim, result) {
     let badgeClass;
