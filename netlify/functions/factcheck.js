@@ -1,11 +1,4 @@
-import dotenv from 'dotenv';
-dotenv.config();
-export default async (req, res) => {
-    if (req.method !== 'POST') {
-      return res.status(405).json({ error: 'Method not allowed' });
-    }
-  
-    const { claim } = req.body;
+
   
     if (!claim) {
       return res.status(400).json({ error: 'Claim is required.' });
